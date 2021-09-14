@@ -1,5 +1,4 @@
 
-var chai = require('chai');
 require("mocha-allure-reporter");
 
 var XMLHttpRequest = require('xhr2');
@@ -28,3 +27,4 @@ describe("Color Code Converter", function () {
 
   // "test": "mocha test/*.js --reporter spec --reporter mocha-allure-reporter; npm run report",
     // "report": "allure generate allure-results --clean -o allure-report && allure open allure-report"
+    // --reporter spec --reporter mocha-allure-reporter; npm run report
