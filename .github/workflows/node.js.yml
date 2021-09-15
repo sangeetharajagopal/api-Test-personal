@@ -26,7 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci    
-    - run: mocha:* node_modules/.bin/mocha test/*.js --reporter mocha-allure-reporter
+    - run: npm test
     - name: Generate allure report and upload to secure server
       if: ${{ always() }}
       run: |
