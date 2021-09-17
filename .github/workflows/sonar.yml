@@ -2,7 +2,7 @@ name: Sonar-Workflow
 
 on:
   push:
-   branches: [ master]
+   branches: [ master, sonar.yml]
   pull_request:
     branches: [ master]
     types: [opened]  
