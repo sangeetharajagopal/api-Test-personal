@@ -4,6 +4,12 @@
 name: Node.js CI
 
 on:
+  workflow_dispatch: 
+    inputs:
+      base_url:
+        description: 'baseUrl'
+        required: false
+        default: 'https://my.setmore.com'
   push:
     branches: [ master, node-sample-project]
   pull_request:
