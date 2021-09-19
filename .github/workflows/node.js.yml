@@ -9,7 +9,7 @@ on:
       base_url:
         description: 'baseUrl'
         required: false
-        default: 'https://my.setmore.com'
+        default: 'https://jsonplaceholder.typicode.com/todos/1'
   push:
     branches: [ master, node-sample-project]
   pull_request:
@@ -56,7 +56,7 @@ jobs:
       if: ${{ always() }}
       run: |
         # Generate allure report and upload to secure server
-        ./node_modules/.bin/allure generate allure-results --clean -o allure-report
+        BASEURL=${{ github.event.inputs.base_url }}./node_modules/.bin/allure generate allure-results --clean -o allure-report
         chmod 400 .secrets/report.ssh
         sh uploadSecurely.sh
 
