@@ -49,9 +49,16 @@ jobs:
       run: |
          # Dependencies have changed -- Installing dependencies
          echo 'chromedriver_skip_download=true' > .npmrc
-         npm ci    
-#     - run: npm ci    
-    - run: npm test
+         npm ci  
+    - name: Run Tests
+      run: |
+       if [ "${{ github.event.inputs.base_url }}" != '' ]; then
+           BASEURL=${{ github.event.inputs.base_url }} mocha test/*.js
+       else
+          npm test
+        fi
+    
+#     - run: npm test
     - name: Generate allure report and upload to secure server
       if: ${{ always() }}
       run: |
