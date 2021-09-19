@@ -15,11 +15,10 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: SonarQube Scan
-      uses: sonarsource/sonarqube-scan-action@master
+      uses: kitabisa/sonarqube-action@master
       with:
         host: ${{ secrets.SONAR_HOST }}
         login: ${{ secrets.SONAR_KEY }}
         projectKey: Test-automation-sample
         projectName: Test-automation-sample
-        projectBaseDir: test/
      
