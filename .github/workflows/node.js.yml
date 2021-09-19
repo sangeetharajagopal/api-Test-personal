@@ -4,12 +4,18 @@
 name: Node.js CI
 
 on:
-  workflow_dispatch: 
-    inputs:
+  workflow_dispatch:
+     inputs:
       base_url:
-        description: 'baseUrl'
-        required: false
-        default: 'https://jsonplaceholder.typicode.com/todos/1'
+       description: 'baseUrl'
+       required: false
+       default: 'https://jsonplaceholder.typicode.com/todos/1'
+#   workflow_dispatch: 
+#     inputs:
+#       base_url:
+#         description: 'baseUrl'
+#         required: false
+#         default: 'https://jsonplaceholder.typicode.com/todos/1'
   push:
     branches: [ master, node-sample-project]
   pull_request:
