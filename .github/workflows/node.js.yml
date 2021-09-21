@@ -13,13 +13,19 @@ on:
 
   push:
     branches: [ master, node-sample-project]
+    
   pull_request:
     branches: [ master ]
+  
+  schedule:
+    - cron: '0 09 * * 1-5'
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+
 
     strategy:
       matrix:
@@ -48,8 +54,8 @@ jobs:
       if: steps.myCacheStep.outputs.cache-hit != 'true'
       run: |
          # Dependencies have changed -- Installing dependencies
-         echo 'chromedriver_skip_download=true' > .npmrc
          npm ci  
+         
     - name: Run Tests
       run: |
        if [ "${{ github.event.inputs.base_url }}" != '' ]; then
