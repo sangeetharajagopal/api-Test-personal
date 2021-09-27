@@ -12,7 +12,7 @@ on:
        default: 'https://jsonplaceholder.typicode.com/todos/1'
 
   push:
-    branches: [ master, node-sample-project]
+    branches: [ master, node-sample-project, Test-cache]
     
   pull_request:
     branches: [ master ]
