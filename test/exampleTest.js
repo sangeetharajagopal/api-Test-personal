@@ -5,7 +5,8 @@ require("mocha-allure-reporter");
 var XMLHttpRequest = require('xhr2');
 // var xhr = new XMLHttpRequest();
 //  var fetch = require('node-fetch').default;
-//new error analyisis should fail
+//  new error analyisis should fail
+var onlyText= a;
 
 describe("Color Code Converter", function () {
   it("changes", function () {
