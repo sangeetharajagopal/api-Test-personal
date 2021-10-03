@@ -12,10 +12,10 @@ describe("Color Code Converter", function () {
     xhr.withCredentials = true;
 
     xhr.addEventListener("readystatechange", function () {
-      if (this.readyState === 4) {
+      if (this.readyState === 4) 
         console.log(this.responseText);
         // allure.description("this responseText");
-      }
+      
     });
     xhr.open("GET", "https://jsonplaceholder.typicode.com/todos/1");
 
