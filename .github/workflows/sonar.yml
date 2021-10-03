@@ -21,4 +21,11 @@ jobs:
         login: ${{ secrets.SONAR_KEY }}
         projectKey: Test-automation-sample
         projectName: Test-automation-sample
+        
+    - name: SonarQube Quality Gate check
+      uses: sonarsource/sonarqube-quality-gate-action@master
+      # Force to fail step after specific time
+      timeout-minutes: 5
+      env:
+       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}      
      
