@@ -1,5 +1,4 @@
 
-var chai = require('chai');
 require("mocha-allure-reporter");
 
 var XMLHttpRequest = require('xhr2');
