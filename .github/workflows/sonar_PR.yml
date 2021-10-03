@@ -30,7 +30,7 @@ jobs:
         run: sonar-scanner
           -Dsonar.host.url=${{ secrets.SONAR_HOST }}
           -Dsonar.login=${{ secrets.SONAR_KEY }}
-          -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
+          -Dsonar.projectKey= Test-automation-sample
           -Dsonar.pullrequest.key=${{ github.event.number }}
           -Dsonar.pullrequest.branch=${{ github.HEAD_REF }}
           -Dsonar.pullrequest.base=${{ github.BASE_REF }}
