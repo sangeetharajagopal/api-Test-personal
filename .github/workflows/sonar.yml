@@ -21,6 +21,8 @@ jobs:
         login: ${{ secrets.SONAR_KEY }}
         projectKey: Test-automation-sample
         projectName: Test-automation-sample
+        enablePullRequestDecoration: true
+
         
     - name: SonarQube Quality Gate check
       uses: sonarsource/sonarqube-quality-gate-action@master
