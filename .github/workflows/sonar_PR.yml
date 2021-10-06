@@ -12,8 +12,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-#       - name: Setup sonarqube
-#         uses: warchant/setup-sonar-scanner@v1
+      - name: Setup sonarqube
+        uses: warchant/setup-sonar-scanner@v1
+      - name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@master
+        with:
+         args: >
+          -Dsonar.projectKey=  Test-automation-sample   
 
       - name: 'Checkout repository on branch: ${{ github.REF }}'
         uses: actions/checkout@v2
@@ -30,7 +35,6 @@ jobs:
         run: sonar-scanner
           -Dsonar.host.url=${{ secrets.SONAR_HOST }}
           -Dsonar.login=${{ secrets.SONAR_KEY }}
-          -Dsonar.projectKey= Test-automation-sample
           -Dsonar.pullrequest.key=${{ github.event.number }}
           -Dsonar.pullrequest.branch=${{ github.HEAD_REF }}
           -Dsonar.pullrequest.base=${{ github.BASE_REF }}
