@@ -5,7 +5,7 @@ on:
     types: [opened, edited, reopened, synchronize]
     branches:
       - master
-      - prsonar
+      - compare_Pr
 jobs:
   build:
 
